@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+h1 {
+    color: #fff;
+}
+
+p {
+    color: #aaa;
+}
+
 .header-container {
     background-color: #0d0d0e;
     background-image: url('img/edtech_bg.png');
@@ -12,4 +20,72 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+}
+
+.header-banner, .image {
+    width: 50%;
+}
+
+.header-banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 80px;
+}
+
+.header-banner h1 {
+    font-size: 110px;
+    margin-bottom: 20px;
+}
+
+.header-banner p {
+    font-size: 27px;
+    padding: 25px;
+    border-left: 2px solid rgba(170, 170, 170, 0.3);
+}
+
+.main-btn {
+    background-color: #76B900;
+    height: 4.5rem;
+    display: inline-flex;
+    margin-top: 3rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(19, 119, 58, 0.3);
+}
+
+.main-btn i {
+    margin-left: 1rem;
+}
+
+.main-btn:hover {
+    color: #619702;
+    background-color: #FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 80%;
+    height: auto;
+    padding-right: 50px;
+}
+
+.green-txt {
+    color: #76B900;
 }
