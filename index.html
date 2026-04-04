@@ -162,6 +162,54 @@
             </div>
           </div>
         </section>
+
+        <!-- ===== AUDIO ===== -->
+        <section class="section-audio">
+          <h2 class="section-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit
+          </h2>
+          <p class="section-sub">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+          <div class="audio-player">
+            <button class="audio-play-btn" id="playBtn" onclick="toggleAudio()">
+              <i class="fa-solid fa-play" id="playIcon"></i>
+            </button>
+            <div class="audio-info">
+              <div
+                class="progress-bar-wrapper"
+                id="progressWrapper"
+                onclick="seekAudio(event)"
+              >
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <div class="audio-times">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">3:45</span>
+              </div>
+            </div>
+            <div class="volume-control">
+            <button class="volume-btn" id="muteBtn" onclick="toggleMute()">
+              <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+            </button>
+            <input
+              type="range"
+              class="volume-slider"
+              id="volumeSlider"
+              min="0"
+              max="100"
+              value="100"
+              oninput="setVolume(this.value)"
+            />
+          </div>
+          </div>
+          
+          <audio
+            id="audioPlayer"
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          ></audio>
+        </section>
       </section>
     </main>
   </body>
