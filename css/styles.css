@@ -251,7 +251,7 @@ section {
 
 /* ========== TEXT 2 SECTION ========== */
 .text-2 {
-  background: #0C0A08;
+  background: #0c0a08;
   border-radius: 5px;
   margin: 0 10rem;
 }
@@ -260,4 +260,131 @@ section {
   color: #fff;
   font-size: 1.4rem;
   text-align: justify;
+}
+
+/* ========== CARDS ========== */
+.cards-grid {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 330px;
+  flex: 1;
+  min-width: 0;
+  background: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  box-shadow: 0 2px 8px #aaa;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px #dddcdc;
+}
+
+.card-collapsed {
+  padding: 52px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.card-question-mark {
+  position: absolute;
+  top: 100px;
+  font-family: "Sora", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #1E293B;
+  line-height: 1;
+  margin-bottom: 40px;
+  user-select: none;
+}
+
+.card-open-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: block;
+  background: #0C0A08;
+  opacity: .9;
+  border: 1px solid #757575;
+  color: #dfdfdf;
+  padding: 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+.card-open-btn:hover {
+  color: #fff;
+  background-color: #0C0A08;
+  opacity: 1;
+}
+
+.card-expanded {
+  display: none;
+  position: relative;
+  width: 320px;
+  height: 330px;
+  background: #0c0a08;
+  padding: 28px 24px 24px;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-expanded p {
+  margin-top: 50px;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.7;
+}
+
+.card-close-btn {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #ffffff;
+  opacity: .9;
+  border: none;
+  color: #0C0A08;
+  padding: 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+.card-close-btn:hover {
+  background: #fff;
+  opacity: 1;
+}
+
+.card.open .card-collapsed {
+  display: none;
+}
+
+.card.open .card-expanded {
+  display: flex;
 }

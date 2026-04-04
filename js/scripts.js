@@ -12,3 +12,11 @@ function goToSlide(n) {
 dots.forEach((d) =>
   d.addEventListener("click", () => goToSlide(+d.dataset.idx)),
 );
+
+setInterval(() => goToSlide((currentSlide + 1) % totalSlides), 4000);
+
+// ===== CARDS =====
+function toggleCard(idx) {
+  const card = document.getElementById(`card-${idx}`);
+  card.classList.toggle("open");
+}
