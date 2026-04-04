@@ -137,7 +137,6 @@ section {
 }
 
 /* ========== VIDEO SECTION ========== */
-
 .video-wrapper {
   width: 100%;
   max-width: 800px;
@@ -156,8 +155,8 @@ section {
 /* ========== IMAGE W/ TEXT SECTION ========== */
 .img-text {
   background-color: #fff;
+  border-radius: 12px;
   margin: 50px;
-  border-radius: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -188,6 +187,7 @@ section {
 /* ========== SLIDER SECTION ========== */
 .section-slider {
   background: #fff;
+  border-radius: 12px;
   margin: 50px;
   text-align: center;
 }
