@@ -248,3 +248,16 @@ section {
   background: #222;
   border-color: #222;
 }
+
+/* ========== TEXT 2 SECTION ========== */
+.text-2 {
+  background: #0C0A08;
+  border-radius: 5px;
+  margin: 0 10rem;
+}
+
+.text-2 p {
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: justify;
+}
