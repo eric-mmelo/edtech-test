@@ -16,6 +16,20 @@ dots.forEach((d) =>
 
 setInterval(() => goToSlide((currentSlide + 1) % totalSlides), 4000);
 
+// ===== VIDEO =====
+document.querySelectorAll('.yt-facade').forEach(facade => {
+  facade.addEventListener('click', () => {
+    const id = facade.dataset.id;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'width:100%;height:100%;border:none;';
+    facade.innerHTML = '';
+    facade.appendChild(iframe);
+  });
+});
+
 // ===== CARDS =====
 function toggleCard(idx) {
   const card = document.getElementById(`card-${idx}`);

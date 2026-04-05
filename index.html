@@ -34,20 +34,14 @@
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout.
         </p>
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-          ></iframe>
+        <div class="yt-facade" data-id="dQw4w9WgXcQ">
+          <img
+            src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+            alt="Video thumbnail"
+          />
+          <button class="yt-play-btn" aria-label="Play video">
+            <i class="fa-solid fa-play"></i>
+          </button>
         </div>
         <section class="img-text">
           <div class="image-wave">
@@ -392,7 +386,7 @@
 
       <!-- ===== FOOTER ===== -->
       <footer>
-        <img src="css/img/logo.png" alt="Logo" class="logo">
+        <img src="css/img/logo.png" alt="Logo" class="logo" />
         <p class="footer-copy">
           &copy; 2026 EdTech. Todos os direitos reservados.
         </p>
