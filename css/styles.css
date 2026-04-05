@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --green: #76b900;
+  --green-dark: #5a8f00;
+  --light-bg: #f7f7f7;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -33,7 +39,7 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
 }
 
@@ -215,13 +221,12 @@ section {
 
 .slide {
   min-width: 100%;
-  height: 700px;
   position: relative;
 }
 
 .slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
@@ -488,9 +493,6 @@ section {
   align-items: center;
 }
 
-.volume-btn:hover {
-}
-
 .volume-slider {
   -webkit-appearance: none;
   appearance: none;
@@ -504,7 +506,7 @@ section {
 
 .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  margin-top: -5px; 
+  margin-top: -5px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -513,9 +515,11 @@ section {
   cursor: pointer;
   box-shadow: 0 0 0 3px rgba(118, 185, 0, 0.2);
 }
+
 .volume-slider::-webkit-slider-thumb:hover {
   transform: scale(1.2);
 }
+
 .volume-slider::-moz-range-thumb {
   width: 14px;
   height: 14px;
@@ -524,3 +528,309 @@ section {
   border: none;
   cursor: pointer;
 }
+
+/* ========== ACTIVITIES ========== */
+.section-activities {
+  background: #fff;
+}
+
+.activity-block {
+  background: #f9f9f9;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  padding: 32px;
+  margin-bottom: 28px;
+  width: 100%;
+  max-width: 760px;
+  text-align: left;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.activity-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.activity-header h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.activity-header p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.activity-block .section-sub {
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.activity-textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  resize: vertical;
+  transition: border 0.2s;
+  background: #fff;
+}
+
+.activity-textarea:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.activity-textarea:disabled {
+  background: #f3f3f3;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.hint-text {
+  font-size: 0.82rem;
+  color: #bbb;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.activity-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-respond {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 11px 26px;
+  border-radius: 6px;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.btn-respond:hover {
+  background: var(--green-dark);
+}
+
+.btn-respond:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-alter {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 11px 26px;
+  border-radius: 6px;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: none;
+}
+
+.btn-alter:hover {
+  background: #111;
+}
+
+.feedback-box {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: #f0fae0;
+  border-left: 4px solid var(--green);
+  font-size: 0.9rem;
+  color: #3a5c00;
+  line-height: 1.65;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========== OBJECTIVE ACTIVITY ========== */
+.choices {
+  list-style: none;
+  margin: 14px 0 18px;
+}
+
+.choices li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e0e0e0;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  color: #333;
+  background: #fff;
+}
+
+.choices li:hover {
+  border-color: var(--green);
+  background: #f8ffe8;
+}
+
+.choices li.selected {
+  border-color: var(--green);
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 600;
+}
+
+.choices li input[type="checkbox"] {
+  display: none;
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.choices li.selected .check-box {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.check-box i {
+  color: #fff;
+  font-size: 0.7rem;
+  display: none;
+}
+
+.choices li.selected .check-box i {
+  display: block;
+}
+
+/* ========== FAQ ========== */
+.section-faq {
+  background: var(--light-bg);
+}
+
+.faq-list {
+  max-width: 760px;
+  width: 100%;
+  text-align: left;
+}
+
+.faq-item {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+.faq-item.active {
+  border-color: var(--green);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: "Sora", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.faq-item.active .faq-question {
+  background: var(--green);
+  color: #fff;
+}
+
+.faq-question i {
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s cubic-bezier(0.77, 0, 0.18, 1),
+    padding 0.3s;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  padding: 0 24px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 20px 24px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #0c0a08;
+  padding: 40px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  color: #64748b;
+}
+

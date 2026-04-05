@@ -190,27 +190,213 @@
               </div>
             </div>
             <div class="volume-control">
-            <button class="volume-btn" id="muteBtn" onclick="toggleMute()">
-              <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
-            </button>
-            <input
-              type="range"
-              class="volume-slider"
-              id="volumeSlider"
-              min="0"
-              max="100"
-              value="100"
-              oninput="setVolume(this.value)"
-            />
+              <button class="volume-btn" id="muteBtn" onclick="toggleMute()">
+                <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+              </button>
+              <input
+                type="range"
+                class="volume-slider"
+                id="volumeSlider"
+                min="0"
+                max="100"
+                value="100"
+                oninput="setVolume(this.value)"
+              />
+            </div>
           </div>
-          </div>
-          
+
           <audio
             id="audioPlayer"
             src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
           ></audio>
         </section>
+
+        <!-- ===== ACTIVITIES ===== -->
+        <section class="section-activities">
+          <div class="activity-block">
+            <div class="activity-header">
+              <div class="activity-badge"><i class="fa-solid fa-pen"></i></div>
+              <div>
+                <h3>Atividade Discursiva</h3>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                </p>
+              </div>
+            </div>
+            <textarea
+              class="activity-textarea"
+              id="discursiveText"
+              placeholder="Digite sua resposta aqui..."
+            ></textarea>
+            <p class="hint-text">Digite sua resposta acima.</p>
+            <div class="activity-btns">
+              <button
+                class="btn-respond"
+                id="discursiveRespond"
+                onclick="respondDiscursive()"
+              >
+                Responder
+              </button>
+              <button
+                class="btn-alter"
+                id="discursiveAlter"
+                onclick="alterDiscursive()"
+              >
+                Alterar
+              </button>
+            </div>
+            <div class="feedback-box" id="discursiveFeedback">
+              <strong>Ótimo trabalho!</strong> Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Pariatur commodi iusto maiores
+              accusamus aspernatur consequatur. Natus dignissimos magnam illo,
+              sed elit perferendis explicabo aperiam culpa veniam labore.
+            </div>
+          </div>
+          <div class="activity-block">
+            <div class="activity-header">
+              <div class="activity-badge">
+                <i class="fa-solid fa-list-check"></i>
+              </div>
+              <div>
+                <h3>Atividade Objetiva</h3>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                </p>
+              </div>
+            </div>
+            <ul class="choices" id="choicesList">
+              <li onclick="selectChoice(this, 0)">
+                <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                <span
+                  >A) Lorem ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </li>
+              <li onclick="selectChoice(this, 1)">
+                <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                <span
+                  >B) Lorem ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </li>
+              <li onclick="selectChoice(this, 2)">
+                <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                <span
+                  >C) Lorem ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </li>
+              <li onclick="selectChoice(this, 3)">
+                <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                <span
+                  >D) Lorem ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </li>
+            </ul>
+            <div class="activity-btns">
+              <button
+                class="btn-respond"
+                id="objectiveRespond"
+                onclick="respondObjective()"
+              >
+                Responder
+              </button>
+              <button
+                class="btn-alter"
+                id="objectiveAlter"
+                onclick="alterObjective()"
+              >
+                Alterar
+              </button>
+            </div>
+            <div class="feedback-box" id="objectiveFeedback">
+              <strong>Muito bom!</strong> Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Pariatur commodi iusto maiores
+              accusamus aspernatur consequatur. Natus dignissimos magnam illo,
+              sed elit perferendis explicabo aperiam culpa veniam labore.
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section-faq">
+          <h2 class="section-title">Perguntas frequentes</h2>
+          <p class="section-sub">
+            Lorem ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+          <div class="faq-list" id="faqList">
+            <div class="faq-item active">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry.<i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. It is a
+                long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout. The point
+                of using Lorem Ipsum is that it has a more-or-less normal
+                distribution of letters, as opposed to using Content here.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry.<i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. It is a
+                long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry.<i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. It is a
+                long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry.<i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. It is a
+                long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry.<i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. It is a
+                long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
+
+      <!-- ===== FOOTER ===== -->
+      <footer>
+        <img src="css/img/logo.png" alt="Logo" class="logo">
+        <p class="footer-copy">
+          &copy; 2026 EdTech. Todos os direitos reservados.
+        </p>
+      </footer>
     </main>
   </body>
 </html>

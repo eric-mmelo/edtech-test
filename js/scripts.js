@@ -87,12 +87,11 @@ function toggleMute() {
 
     updateVolumeSlider(0);
     updateVolumeIcon(0);
-
   } else {
     audio.volume = lastVolume;
     slider.value = lastVolume * 100;
 
-    updateVolumeSlider(lastVolume * 100); 
+    updateVolumeSlider(lastVolume * 100);
     updateVolumeIcon(lastVolume);
   }
 }
@@ -118,3 +117,78 @@ function updateVolumeSlider(value) {
   const slider = document.getElementById("volumeSlider");
   slider.style.background = `linear-gradient(to right, #76b900 ${value}%, #e0e0e0 ${value}%)`;
 }
+
+// ===== DISCURSIVE ACTIVITY =====
+function respondDiscursive() {
+  const txt = document.getElementById("discursiveText").value.trim();
+  if (!txt) return;
+  document.getElementById("discursiveText").disabled = true;
+  document.getElementById("discursiveRespond").disabled = true;
+  document.getElementById("discursiveAlter").style.display = "inline-flex";
+  document.getElementById("discursiveFeedback").style.display = "block";
+  sessionStorage.setItem("disc_answer", txt);
+  sessionStorage.setItem("disc_submitted", "1");
+}
+function alterDiscursive() {
+  document.getElementById("discursiveText").disabled = false;
+  document.getElementById("discursiveRespond").disabled = false;
+  document.getElementById("discursiveAlter").style.display = "none";
+  document.getElementById("discursiveFeedback").style.display = "none";
+  sessionStorage.removeItem("disc_submitted");
+}
+
+// ===== OBJECTIVE ACTIVITY =====
+let selectedChoice = null;
+function selectChoice(el, idx) {
+  if (document.getElementById("objectiveRespond").disabled) return;
+  document
+    .querySelectorAll(".choices li")
+    .forEach((li) => li.classList.remove("selected"));
+  el.classList.add("selected");
+  selectedChoice = idx;
+  sessionStorage.setItem("obj_choice", idx);
+}
+function respondObjective() {
+  if (selectedChoice === null) return;
+  document
+    .querySelectorAll(".choices li")
+    .forEach((li) => (li.style.pointerEvents = "none"));
+  document.getElementById("objectiveRespond").disabled = true;
+  document.getElementById("objectiveAlter").style.display = "inline-flex";
+  document.getElementById("objectiveFeedback").style.display = "block";
+  sessionStorage.setItem("obj_submitted", "1");
+}
+function alterObjective() {
+  document
+    .querySelectorAll(".choices li")
+    .forEach((li) => (li.style.pointerEvents = ""));
+  document.getElementById("objectiveRespond").disabled = false;
+  document.getElementById("objectiveAlter").style.display = "none";
+  document.getElementById("objectiveFeedback").style.display = "none";
+  sessionStorage.removeItem("obj_submitted");
+}
+
+// ===== FAQ =====
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isActive = item.classList.contains("active");
+  document
+    .querySelectorAll(".faq-item")
+    .forEach((i) => i.classList.remove("active"));
+  if (!isActive) item.classList.add("active");
+}
+
+// ===== SESSION STORAGE RESTORE =====
+(function restoreSession() {
+  // Discursive
+  const discAns = sessionStorage.getItem("disc_answer");
+  if (discAns) document.getElementById("discursiveText").value = discAns;
+  if (sessionStorage.getItem("disc_submitted")) respondDiscursive();
+  // Objective
+  const choice = sessionStorage.getItem("obj_choice");
+  if (choice !== null) {
+    const items = document.querySelectorAll(".choices li");
+    if (items[+choice]) selectChoice(items[+choice], +choice);
+  }
+  if (sessionStorage.getItem("obj_submitted")) respondObjective();
+})();
